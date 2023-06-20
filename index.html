@@ -1,11 +1,53 @@
-	<!DOCTYPE html>
-	<html lang="en">
-	<head>
-		<meta charset="UTF-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>1-Blog</title>
-	</head>
-	<body>
-		
-	</body>
-	</html>
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+	<link rel="stylesheet" href="style/style.css" />
+	<title>Minhas tarefas</title>
+</head>
+<body>
+	<div class="container">
+		<h1>Minha lista de tarefas</h1>
+		<hr />
+		<form id="taskForm">
+			<input type="text" id="taskInput" placeholder="Digite uma nova tarefa" required />
+			<div class="options">
+				<select id="taskPriority">
+					<option value="">Escolha a urgência</option>
+					<option value="urgente">Urgente</option>
+					<option value="Muito importante">Muito Importante</option>
+					<option value="importante">Importante</option>
+					<option value="posso-adiar">Posso Adiar</option>
+				</select>
+			</div>
+			<button type="submit">Adicionar</button>
+		</form>
+		<div id="filterSection">
+			<h3>Filtrar tarefas</h3>
+			<select id="filterPriority">
+				<option value="">Todos</option>
+				<option value="urgente">Urgente</option>
+				<option value="muito-importante">Muito Importante</option>
+				<option value="importante">Importante</option>
+				<option value="posso-adiar">Posso Adiar</option>
+			</select>
+			<input type="text" id="searchInput" placeholder="Buscar">
+		</div>
+		<table id="taskTable">
+			<thead>
+				<tr>
+					<th>Tarefa</th>
+					<th>Prioridade</th>
+					<th>Ações</th>
+				</tr>
+			</thead>
+			<tbody></tbody>
+		</table>
+	</div>
+</body>
+<script src="script/script.js"></script>
+</html>
