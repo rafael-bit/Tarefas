@@ -12,19 +12,51 @@
 }
 
 body{
-	background-image: url("../img/background.webp");
+	background: linear-gradient(to bottom, #007bff, #0000ff);
+	background-repeat: no-repeat;
+	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
+button:hover{
+	opacity: .9;
+}
+
+input, select, button{
+	cursor: pointer;
+}
+
+::-webkit-scrollbar {
+	width: 1vw;
+	height: 10px;
+}
+
+input{
+	margin-right: .7rem;
+	padding: .4rem;
+	outline: none;
+	border: 1px solid var(--gray);
+	border-radius: 7px;
+}
+
+::-webkit-scrollbar-thumb {
+	background: rgb(0, 179, 255);
+	border-radius: 1.2vw;
+}
+
+::-webkit-scrollbar-track {
+	background: rgb(255, 255, 255);
+	border: .1px solid #fff;
+}
+
 .container{
-	margin-top: 2rem;
 	padding: 2rem;
 	background: var(--white);
 	border-radius: 15px;
 
-	width: 45%;
+	width: 70vw;
 }
 
 #taskForm{
@@ -32,13 +64,6 @@ body{
 	display: flex;
 }
 
-#taskForm input{
-	margin-right: .7rem;
-	padding: .4rem;
-	outline: none;
-	border: 1px solid var(--gray);
-	border-radius: 7px;
-}
 
 #taskForm select {
 	margin-right: .7rem;
@@ -69,14 +94,118 @@ body{
 	margin-right: .7rem;
 	padding: .4rem;
 	outline: none;
-	border: 1px solid var(--gray);
 	border-radius: 7px;
 }
 
-#filterSection input {
-	margin-right: .7rem;
-	padding: .4rem;
-	outline: none;
-	border: 1px solid var(--gray);
-	border-radius: 7px;
+.table{
+	overflow-x: auto;
+}
+
+#taskTable {
+	width: 100%;
+	border-spacing: 0 0.5rem;
+}
+
+#taskTable th{
+	align-items: center;
+	padding-top: 1.5rem;
+}
+
+#taskTable td {
+	padding: .3rem 2rem;
+	text-align: center;
+}
+
+#taskTable td button{
+	padding: 1rem 2em;
+	font-size: .7rem;
+	border-radius: 10px;
+	border: none;
+	background: var(--blue);
+	color: var(--white);
+}
+
+.completed td p{
+	text-decoration: line-through;
+}
+
+.buttons{
+	white-space: nowrap;
+}
+
+@media(max-width: 680px){
+	input {
+		height: 1.7rem;
+		margin-right: .7rem;
+		padding: 0rem .4rem;
+		font-size: 10px;
+	}
+
+	#taskForm button {
+		padding: .35rem 1rem;
+		font-size: 12px;
+	}
+
+	select{
+		height: 1.7rem;
+		font-size: 10px;
+	}
+
+	.container{
+		padding: 1rem;
+
+	}
+
+	.container h1{
+		font-size: 1.5rem;
+	}
+
+	#filterSection h3{
+		font-size: 1rem;
+	}
+
+	th, td {
+		font-size: .7rem;
+	}
+
+		#taskTable td button {
+			padding: 1rem 2em;
+			font-size: .5rem;
+		}
+}
+
+@media(max-width: 540px) {
+	.container h1 {
+		font-size: 1.3rem;
+	}
+	
+	#filterSection h3 {
+		font-size: 1rem;
+	}
+
+	#taskForm{
+		flex-wrap: wrap;
+	}
+
+	#taskForm button{
+		margin-top: .7rem;
+	}
+
+	#taskTable td {
+		padding: .3rem 1.5rem;
+		text-align: center;
+	}
+}
+
+@media(max-width: 440px) {
+	#taskForm button {
+		padding: 0rem 1rem;
+		height: 1.7rem;
+		font-size: 10px;
+		margin-top: .5rem;
+	}
+
+	input, select{
+		margin-top: .5rem;
+	}
 }
